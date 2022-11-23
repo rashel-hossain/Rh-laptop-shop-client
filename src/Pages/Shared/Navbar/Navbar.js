@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import RhLaptopShop from '../../../assets/RhLaptopShop.PNG'
 
 const Navbar = () => {
 
@@ -20,7 +21,10 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl font-bold">Laptop-Shop</Link>
+                {/* <Link to='/' className="btn btn-ghost normal-case text-xl font-bold">Laptop-Shop</Link> */}
+                <Link to='/' className="btn btn-ghost normal-case text-xl">
+                    <img style={{ width: "180px", height: "40px", position: "absolute" }} src={RhLaptopShop} alt="" />
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0 font-bold">
