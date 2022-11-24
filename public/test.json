@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Meet Our Galaxy Series",
+        "description": "The Galaxy experience Do more effortlessly with Galaxy devices that work seamlessly together. Galaxy Books are loaded with the features you need to work, play and conquer the day.",
+        "img": "https://i.ibb.co/3FszCVb/Galaxy-Book2-Pro-360.jpg"
+    },
+    {
+        "title": "Explore Our hp-pavilion Series",
+        "description": "Build it your way Configurable laptops are custom built to allow you to choose the specs you want. Upgrade your processor, memory, storage, and more to fit your needs. Step up and save! Discounts available on select graphics upgrades.",
+        "img": "https://i.ibb.co/WBbLHYD/hp-pavilion-14-and-15-1.jpg"
+    },
+    {
+        "title": "The Biggest Macbook Series",
+        "description": "The first generation MacBook Pro followed in the style of the PowerBook G4 that came before it, but used Intel processors rather than PowerPC chips. The second generation of the MacBook Pro was the first to really separate itself from the products before, with a unibody enclosure.",
+        "img": "https://9to5mac.com/wp-content/uploads/sites/6/2021/10/MacBook-Pro-2021.jpg"
+    }
+]
