@@ -13,16 +13,6 @@ const Login = () => {
 
     const googleProvider = new GoogleAuthProvider();
 
-    // handle with google sign in method
-    const handleGoogleSignIn = () => {
-        googleSignIn(googleProvider)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-                toast.success('Successfully login')
-            })
-            .catch(err => console.log(err))
-    }
 
     // email/password Login
     const handleLogin = data => {
@@ -39,6 +29,16 @@ const Login = () => {
             });
     }
 
+    // handle with google sign in method
+    const handleGoogleSignIn = () => {
+        googleSignIn(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('Successfully login')
+            })
+            .catch(err => console.log(err))
+    }
     return (
         <div className='h-[800px] flex justify-center items-center'>
             <div className='w-96 p-7'>

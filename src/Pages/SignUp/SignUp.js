@@ -11,16 +11,6 @@ const SignUp = () => {
 
     const googleProvider = new GoogleAuthProvider();
 
-    // handle with google sign in method
-    const handleGoogleSignIn = () => {
-        googleSignIn(googleProvider)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-                toast.success('Successfully login')
-            })
-            .catch(err => console.log(err))
-    }
 
     // email/password signup
     const handleSignUp = data => {
@@ -41,6 +31,17 @@ const SignUp = () => {
             .catch(error => {
                 console.error(error)
             })
+    }
+
+    // handle with google sign in method
+    const handleGoogleSignIn = () => {
+        googleSignIn(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('Successfully login')
+            })
+            .catch(err => console.log(err))
     }
 
     return (
