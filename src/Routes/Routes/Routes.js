@@ -1,5 +1,5 @@
 import Main from "../../Layout/Main";
-import About from "../../Pages/About/About";
+import AllProductsCategories from "../../Pages/AllProductsCategory/AllProductsCategories";
 import Blog from "../../Pages/Blog/Blog";
 import Home from "../../Pages/Home/Home/Home";
 import SingleCategory from "../../Pages/Home/SingleCategory/SingleCategory";
@@ -19,8 +19,8 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: '/about',
-                element: <About></About>
+                path: '/allProductsCategories',
+                element: <AllProductsCategories></AllProductsCategories>
             },
             {
                 path: '/login',
