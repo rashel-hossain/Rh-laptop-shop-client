@@ -1,13 +1,22 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
 import { GoogleAuthProvider } from 'firebase/auth';
 
+const options = {
+    DoTheThing: 'DoTheThing',
+    DoOtherThing: 'DoOtherThing',
+};
+
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { createUser, googleSignIn, updateUser } = useContext(AuthContext);
+    const [action, setAction] = useState(options.DoTheThing);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -20,6 +29,7 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success('User Created Successfully.')
+                navigate(from, { replace: true });
 
                 const userInfo = {
                     displayName: data.name
@@ -75,7 +85,33 @@ const SignUp = () => {
                             className="input input-bordered w-full max-w-xs" />
                         {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                     </div>
+                    <div>
+                        <label className='mr-4'>
+                            <input
+                                className='mr-2'
+                                type="radio"
+                                name="radio1"
+                                value={options.DoTheThing}
+                                checked={action === options.DoTheThing}
+                                onChange={event => setAction(event.target.value)}
+                            />
+                            user
+                        </label>
+
+                        <label>
+                            <input
+                                className='mr-2'
+                                type="radio"
+                                name="radio1"
+                                value={options.DoOtherThing}
+                                checked={action === options.DoOtherThing}
+                                onChange={event => setAction(event.target.value)}
+                            />
+                            Seller
+                        </label>
+                    </div>
                     <input className='btn btn-active btn-primary w-full mt-4' type="submit" value="Sign Up" />
+
                     <div>
 
                     </div>
@@ -83,8 +119,8 @@ const SignUp = () => {
                 <p>Already Have an account?<Link to="/login" className='text-secondary'> Please Login</Link></p>
                 <div className="divider">OR</div>
                 <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 

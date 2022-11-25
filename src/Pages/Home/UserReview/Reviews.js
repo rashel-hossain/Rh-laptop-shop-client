@@ -29,11 +29,11 @@ const Reviews = () => {
         },
     ]
     return (
-        <section className='my-16'>
+        <section className='my-16 mt-24'>
             <div>
                 <div className='flex justify-between'>
                     <div>
-                        <h4 className='text-md text-primary font-bold'>Buyer and Seller Review</h4>
+                        <h4 className='text-md text-primary font-bold'>Review Buyer and Seller</h4>
                         <h2 className='text-2xl'>What Our Buyer and Seller Says</h2>
                     </div>
                     <figure>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='text-white bg-red-600 p-5 '>
+        <div className='text-white bg-red-600 p-5 mt-24'>
             <footer className="footer">
                 <div>
                     <img className='rounded-xl' src="/RhLaptopShop.PNG" alt="" />
