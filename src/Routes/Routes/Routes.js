@@ -5,6 +5,7 @@ import Blog from "../../Pages/Blog/Blog";
 import AllBuyers from "../../Pages/Dashboard/AllBuyers/AllBuyers";
 import AllSalers from "../../Pages/Dashboard/AllSalers/AllSalers";
 import MyOrder from "../../Pages/Dashboard/MyOrder/MyOrder";
+import Payment from "../../Pages/Dashboard/Payment/Payment";
 import Home from "../../Pages/Home/Home/Home";
 import SingleCategory from "../../Pages/Home/SingleCategory/SingleCategory";
 import Login from "../../Pages/Login/Login";
@@ -64,8 +65,13 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allbuyers',
                 element: <AllBuyers></AllBuyers>
-            }
+            },
 
+            {
+                path: '/dashboard/payment',
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
+            }
 
         ]
     }

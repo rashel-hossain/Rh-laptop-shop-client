@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MyOrder = () => {
     return (
@@ -27,7 +28,11 @@ const MyOrder = () => {
                             </td>
 
                             <th>
-                                <button className="btn btn-primary btn-sm mr-2">Pay</button>
+                                <Link to={'/dashboard/payment'}>
+                                    <button className="btn btn-primary btn-sm mr-2">
+                                        Pay</button>
+                                </Link>
+
                                 <button className="btn btn-error btn-sm">Cancel</button>
                             </th>
                         </tr>
