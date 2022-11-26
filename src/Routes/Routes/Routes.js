@@ -9,6 +9,7 @@ import Payment from "../../Pages/Dashboard/Payment/Payment";
 import Home from "../../Pages/Home/Home/Home";
 import SingleCategory from "../../Pages/Home/SingleCategory/SingleCategory";
 import Login from "../../Pages/Login/Login";
+import ErrorPage from "../../Pages/Shared/ErrorPage/ErrorPage";
 import SignUp from "../../Pages/SignUp/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
                 path: '/category/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/catagory/${params.id}`),
                 element: <SingleCategory></SingleCategory>
+            },
+            {
+                path: '*',
+                element: <ErrorPage></ErrorPage>
             }
 
         ]
@@ -66,11 +71,22 @@ const router = createBrowserRouter([
                 path: '/dashboard/allbuyers',
                 element: <AllBuyers></AllBuyers>
             },
-
+            // {
+            //     path: '/dashboard/allusers',
+            //     element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            // },
+            // {
+            //     path: '/dashboard/adddoctor',
+            //     element: <AdminRoute><AddProduct></AddProduct></AdminRoute>
+            // },
             {
                 path: '/dashboard/payment',
-                element: <Payment></Payment>,
-                loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
+                element: <Payment></Payment>
+                // loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
+            },
+            {
+                path: '*',
+                element: <ErrorPage></ErrorPage>
             }
 
         ]
