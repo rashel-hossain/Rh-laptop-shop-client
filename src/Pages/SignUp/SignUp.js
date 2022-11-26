@@ -14,6 +14,7 @@ const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { createUser, googleSignIn, updateUser } = useContext(AuthContext);
     const [action, setAction] = useState(options.DoTheThing);
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';

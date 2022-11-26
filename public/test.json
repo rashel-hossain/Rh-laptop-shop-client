@@ -1,17 +1,101 @@
 [
     {
-        "title": "Meet Our Galaxy Series",
-        "description": "The Galaxy experience Do more effortlessly with Galaxy devices that work seamlessly together. Galaxy Books are loaded with the features you need to work, play and conquer the day.",
-        "img": "https://i.ibb.co/3FszCVb/Galaxy-Book2-Pro-360.jpg"
+        "brandName": "Samsung",
+        "productTitle": "Galaxy Book-2",
+        "sellerName": "Rasel Shariar",
+        "reSellPrice": 45000,
+        "orginalPrice": 23000,
+        "yearsOfUses": 1,
+        "location": "Poribagh, Dhaka",
+        "email": "rasel.csediu44@gmail.com",
+        "image": "https://i.ibb.co/ZmkKCj0/Samsung-Galaxy-Book-Pro.jpg"
     },
     {
-        "title": "Explore Our hp-pavilion Series",
-        "description": "Build it your way Configurable laptops are custom built to allow you to choose the specs you want. Upgrade your processor, memory, storage, and more to fit your needs. Step up and save! Discounts available on select graphics upgrades.",
-        "img": "https://i.ibb.co/WBbLHYD/hp-pavilion-14-and-15-1.jpg"
+        "brandName": "Samsung",
+        "productTitle": "Galaxy Book-2 Pro 360",
+        "sellerName": "Mr. Nayon Roy",
+        "reSellPrice": 35000,
+        "orginalPrice": 65000,
+        "yearsOfUses": 2,
+        "location": "Dhanmondi, Dhaka",
+        "email": "nayon95@gmail.com",
+        "image": "https://i.ibb.co/921RnGT/Samsung-Galaxy-Book-2-Pro-360-2.jpg"
     },
     {
-        "title": "The Biggest Macbook Series",
-        "description": "The first generation MacBook Pro followed in the style of the PowerBook G4 that came before it, but used Intel processors rather than PowerPC chips. The second generation of the MacBook Pro was the first to really separate itself from the products before, with a unibody enclosure.",
-        "img": "https://9to5mac.com/wp-content/uploads/sites/6/2021/10/MacBook-Pro-2021.jpg"
+        "brandName": "Samsung",
+        "productTitle": "Samsung Galaxy Book",
+        "sellerName": "Tamim Hasan",
+        "reSellPrice": 25000,
+        "orginalPrice": 55000,
+        "yearsOfUses": 2,
+        "location": "Panthpath, Dhaka",
+        "email": "tamimhasan@gmail.com",
+        "image": "https://cdn.mos.cms.futurecdn.net/QRpNK3nUKJmPLVLV4Zj5bb-480-80.jpg"
+    },
+    {
+        "brandName": "hp",
+        "productTitle": "hp-spectre-x360-14",
+        "sellerName": "Shariar Joy",
+        "reSellPrice": 45000,
+        "orginalPrice": 23000,
+        "yearsOfUses": 1,
+        "location": "Panthpath, Dhaka",
+        "email": "shariarjoy@gmail.com",
+        "image": "https://i.ibb.co/XVSv6DD/c08017759.png"
+    },
+    {
+        "brandName": "hp",
+        "productTitle": "hp-omen-16",
+        "sellerName": "Fahim Ahmed",
+        "reSellPrice": 15000,
+        "orginalPrice": 35000,
+        "yearsOfUses": 2,
+        "location": "Chandpur, Cumilla",
+        "email": "fahimahmed@gmail.com",
+        "image": "https://i.ibb.co/vB3hSK0/c07602305.png"
+    },
+    {
+        "brandName": "hp",
+        "productTitle": "HP Pavilion Plus 14",
+        "sellerName": "Tasnem Shuvo",
+        "reSellPrice": 27000,
+        "orginalPrice": 39000,
+        "yearsOfUses": 1,
+        "location": "Kaptai, Chittangong",
+        "email": "tasnem75@gmail.com",
+        "image": "https://i.pcmag.com/imagery/reviews/065rv6nxdAEcCzvE3Qb8T3v-1..v1658424542.jpg"
+    },
+    {
+        "brandName": "MackBook",
+        "productTitle": "MacBook-Pro",
+        "sellerName": "Tasan Raju",
+        "reSellPrice": 45000,
+        "orginalPrice": 95000,
+        "yearsOfUses": 1,
+        "location": "Banglamotor, Dhaka",
+        "email": "tahsanraju@gmail.com",
+        "image": "https://9to5mac.com/wp-content/uploads/sites/6/2021/10/MacBook-Pro-2021.jpg"
+    },
+    {
+        "brandName": "MackBook",
+        "productTitle": "MacBook-Pro Max",
+        "sellerName": "Saiful Islam",
+        "reSellPrice": 85000,
+        "orginalPrice": 115000,
+        "yearsOfUses": 2,
+        "location": "Poribagh, Dhaka",
+        "email": "saifulislam@gmail.com",
+        "image": "https://img.etimg.com/photo/msid-93619818,quality-100/apple-laptops.jpg"
+    },
+    {
+        "brandName": "MackBook",
+        "productTitle": "Apple MacBook Air",
+        "sellerName": "Mr. Maxwell",
+        "reSellPrice": 64000,
+        "orginalPrice": 75000,
+        "yearsOfUses": 2,
+        "location": "Kataban, Dhaka",
+        "email": "maxwell@gmail.com",
+        "image": "https://cdn.pocket-lint.com/r/s/x1920/assets/images/161396-laptops-review-hands-on-macbook-air-review-image1-v2jzcb3rqd.jpg"
     }
 ]
