@@ -4,6 +4,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { FcGoogle } from 'react-icons/fc';
+
 
 const options = {
     DoTheThing: 'DoTheThing',
@@ -13,6 +15,7 @@ const options = {
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { createUser, googleSignIn, updateUser } = useContext(AuthContext);
+    const [signUpError, setSignUpError] = useState('');
     const [action, setAction] = useState(options.DoTheThing);
 
     const navigate = useNavigate();
@@ -25,6 +28,7 @@ const SignUp = () => {
     // email/password signup
     const handleSignUp = data => {
         console.log(data);
+        setSignUpError('');
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
@@ -144,14 +148,13 @@ const SignUp = () => {
                         </label>
                     </div>
                     <input className='btn btn-active btn-primary w-full mt-4' type="submit" value="Sign Up" />
-
                     <div>
-
+                        {signUpError && <p className='text-red-600'>{signUpError}</p>}
                     </div>
                 </form>
                 <p>Already Have an account?<Link to="/login" className='text-secondary'> Please Login</Link></p>
                 <div className="divider">OR</div>
-                <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
+                <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'><FcGoogle className='text-2xl mr-2' />CONTINUE WITH GOOGLE</button>
             </div >
         </div >
     );

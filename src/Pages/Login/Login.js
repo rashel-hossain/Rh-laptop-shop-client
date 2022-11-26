@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
-
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -26,6 +26,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 navigate(from, { replace: true });
+                toast.success('Successfully login');
 
             })
             .catch(error => {
@@ -81,7 +82,7 @@ const Login = () => {
                 </div>
                 <p>Are you new to RH-Laptop? <Link to="/signup" className='text-secondary'>Create a account.</Link></p>
                 <div className="divider">OR</div>
-                <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
+                <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'><FcGoogle className='text-2xl mr-2' />CONTINUE WITH GOOGLE</button>
             </div>
         </div>
     );
