@@ -35,8 +35,7 @@ const AllBuyers = () => {
                             </td>
 
                             <th>
-                                <button className="btn btn-primary btn-xs mr-2">Verify</button>
-                                <button className="btn btn-error btn-xs">Delete</button>
+                                <button className="btn btn-error btn-sm">Delete</button>
                             </th>
                         </tr>
                     </tbody>

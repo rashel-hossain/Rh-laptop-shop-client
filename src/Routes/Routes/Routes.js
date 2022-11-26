@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute><DashBoardLayout></DashBoardLayout> </PrivateRoute>,
         children: [
             {
-                path: '/dashboard',
+                path: '/dashboard/myorders',
                 element: <MyOrder></MyOrder>
             },
 
@@ -65,6 +65,7 @@ const router = createBrowserRouter([
                 path: '/dashboard/allbuyers',
                 element: <AllBuyers></AllBuyers>
             }
+
 
         ]
     }
