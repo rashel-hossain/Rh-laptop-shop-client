@@ -2,6 +2,7 @@ import DashBoardLayout from "../../Layout/DashBoardLayout";
 import Main from "../../Layout/Main";
 import AllProductsCategories from "../../Pages/AllProductsCategory/AllProductsCategories";
 import Blog from "../../Pages/Blog/Blog";
+import AllSalers from "../../Pages/Dashboard/AllSalers/AllSalers";
 import MyOrder from "../../Pages/Dashboard/MyOrder/MyOrder";
 import Home from "../../Pages/Home/Home/Home";
 import SingleCategory from "../../Pages/Home/SingleCategory/SingleCategory";
@@ -54,23 +55,12 @@ const router = createBrowserRouter([
                 path: '/dashboard',
                 element: <MyOrder></MyOrder>
             },
-            // {
-            //     path: '/dashboard/allusers',
-            //     element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
-            // },
-            // {
-            //     path: '/dashboard/adddoctor',
-            //     element: <AdminRoute><AddDoctor></AddDoctor></AdminRoute>
-            // },
-            // {
-            //     path: '/dashboard/managedoctors',
-            //     element: <AdminRoute><Managedoctors></Managedoctors></AdminRoute>
-            // },
-            // {
-            //     path: '/dashboard/payment/:id',
-            //     element: <Payment></Payment>,
-            //     loader: ({ params }) => fetch(`https://doctors-portal-server-kappa-nine.vercel.app/bookings/${params.id}`)
-            // }
+
+            {
+                path: '/dashboard/allsalers',
+                element: <AllSalers></AllSalers>
+            }
+
         ]
     }
 ])
