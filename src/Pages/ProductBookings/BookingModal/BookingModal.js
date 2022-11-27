@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const BookingModal = ({ products, setProducts, refetch }) => {
-
+    const { user } = useContext(AuthContext);
     const handleBooking = event => {
         event.preventDefault();
 
         const form = event.target;
+        const email = form.email.value;
         const productTitle = form.productTitle.value;
         const price = form.price.value;
         const phone = form.phone.value;
-        const message = form.message.value;
-        // console.log(productTitle, price, phone, message);
+        const meetLocation = form.meetLocation.value;
+        // console.log(productTitle, price, phone, meetLocation);
 
         const booking = {
+            buyerEmail: email,
             phone,
             price,
             productTitle: productTitle,
-            message
+            meetLocation,
+            productPhoto: products.image
         }
         console.log(booking);
         /*Here,
@@ -56,9 +60,10 @@ const BookingModal = ({ products, setProducts, refetch }) => {
                     <h3 className="text-lg font-bold">Model: {products?.productTitle}</h3>
                     <form onSubmit={handleBooking} className='grid gap-2 grid-cols-1 mt-6'>
                         <input name="productTitle" type="text" defaultValue={products?.productTitle} disabled placeholder="Your product model name" className="input w-full input-bordered" />
-                        <input name="price" type="text" defaultValue={products?.reSellPrice} disabled placeholder="Your price" className="input w-full input-bordered" />
+                        <input name="price" type="text" defaultValue={products?.reSellPrice} readOnly placeholder="Your price" className="input w-full input-bordered" />
+                        <input name="email" type="email" defaultValue={user?.email} readOnly placeholder="Your email address" className="input w-full input-bordered" />
                         <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
-                        <input name="message" type="text" placeholder="Your Message..." className="input w-full input-bordered" />
+                        <input name="meetLocation" type="text" placeholder="Write meet location..." className="input w-full input-bordered" />
                         <br />
                         <input className='btn btn-accent w-full' type="submit" value="Submit" />
                     </form>

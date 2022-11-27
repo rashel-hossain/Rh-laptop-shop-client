@@ -6,17 +6,13 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 const MyOrder = () => {
     const { user } = useContext(AuthContext);
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    // const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
     // Display User specific Appointments using Data Table
     const { data: bookings = [] } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
-            const res = await fetch(url, {
-                headers: {
-                    authorization: `bearer ${localStorage.getItem('accessToken')}`
-                }
-            });
+            const res = await fetch(`http://localhost:5000/bookings?email=${user?.email}`);
             const data = await res.json();
             return data;
         }
@@ -30,6 +26,7 @@ const MyOrder = () => {
                     <thead>
                         <tr>
                             <th>Index</th>
+                            <th>Photo</th>
                             <th>Model Name</th>
                             <th>Price</th>
                             <th>Action</th>
@@ -38,48 +35,40 @@ const MyOrder = () => {
                     <tbody>
 
                         {
-                            bookings?.length && bookings.map((booking, i) => <tr key={booking._id}>
+                            bookings?.length
+                            && bookings.map((booking, i) => <tr key={booking._id}>
                                 <th>{i + 1}</th>
+                                <td>
+                                    <div className="avatar">
+                                        <div className="mask mask-squircle w-12 h-12">
+                                            <img src={bookings.productPhoto} alt="Avatar Tailwind CSS Component" />
+                                        </div>
+                                    </div>
+                                </td>
                                 <td>{booking.productTitle}</td>
                                 <td>{booking.price}</td>
-                                {
-                                    booking.price && !booking.paid &&
-                                    <Link to={`/dashboard/payment/${booking._id}`}>
-                                        <button
-                                            className='btn btn-primary btn-sm'
-                                        >Pay</button>
-                                    </Link>
-                                }
-                                {
-                                    booking.price && booking.paid && <span className='text-green-500 font-bold btn-sm'>Paid</span>
-                                }
+                                <td>
+                                    {
+                                        booking.price && !booking.paid &&
+                                        <Link to={`/dashboard/payment/${booking._id}`} className="flex justify-center items-center">
+                                            <button
+                                                className='btn btn-primary btn-sm'
+                                            >Pay</button>
+                                        </Link>
+                                    }
+                                    {
+                                        booking.price && booking.paid && <span className='text-green-500 font-bold btn-sm'>Paid</span>
+                                    }
+                                </td>
+
                             </tr>)
                         }
-                        {/* <tr>
 
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="font-bold">Hart Hagerty</div>
-                                </div>
-                            </td>
-                            <td>
-                                Zemlak, Daniel and Leannon
-                            </td>
-
-                            <th>
-                                <Link to={'/dashboard/payment'}>
-                                    <button className="btn btn-primary btn-sm mr-2">
-                                        Pay</button>
-                                </Link>
-
-                                <button className="btn btn-error btn-sm">Cancel</button>
-                            </th>
-                        </tr> */}
                     </tbody>
-
-
                 </table>
             </div>
+
+
         </div>
     );
 };

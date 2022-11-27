@@ -7,16 +7,10 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import { FcGoogle } from 'react-icons/fc';
 
 
-const options = {
-    DoTheThing: 'DoTheThing',
-    DoOtherThing: 'DoOtherThing',
-};
-
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const { createUser, googleSignIn, updateUser } = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState('');
-    const [action, setAction] = useState(options.DoTheThing);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -122,37 +116,52 @@ const SignUp = () => {
                             className="input input-bordered w-full max-w-xs" />
                         {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                     </div>
-                    <div>
-                        <label className='mr-4'>
-                            <input
-                                className='mr-2'
-                                type="radio"
-                                name="radio1"
-                                value={options.DoTheThing}
-                                checked={action === options.DoTheThing}
-                                onChange={event => setAction(event.target.value)}
-                            />
-                            user
-                        </label>
 
-                        <label>
-                            <input
-                                className='mr-2'
-                                type="radio"
-                                name="radio1"
-                                value={options.DoOtherThing}
-                                checked={action === options.DoOtherThing}
-                                onChange={event => setAction(event.target.value)}
-                            />
-                            Seller
+                    <div className="form-control mb-4 mt-2">
+                        <label className="label">
+                            <span className="label-text text-lg font-medium text-secondary">
+                                Type of account?
+                            </span>
                         </label>
+                        <div className='flex items-center'>
+                            <div className="flex items-center">
+                                <input
+                                    type="radio"
+                                    name="radio-1"
+                                    className="radio"
+                                    value="Buyer"
+                                    {...register("role")}
+                                    checked
+                                />
+                                <label className="label">
+                                    <span className="label-text text-secondary font-medium">
+                                        Buyer
+                                    </span>
+                                </label>
+                            </div>
+                            <div className="flex items-center ml-6">
+                                <input
+                                    type="radio"
+                                    name="radio-1"
+                                    className="radio"
+                                    value="Seller"
+                                    {...register("role")}
+                                />
+                                <label className="label">
+                                    <span className="label-text text-secondary font-medium">
+                                        Seller
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
+
                     <input className='btn btn-active btn-primary w-full mt-4' type="submit" value="Sign Up" />
                     <div>
                         {signUpError && <p className='text-red-600'>{signUpError}</p>}
                     </div>
                 </form>
-                <p>Already Have an account?<Link to="/login" className='text-secondary'> Please Login</Link></p>
+                <p>Already Have an account?<Link to="/login" className='text-secondary'>Please Login</Link></p>
                 <div className="divider">OR</div>
                 <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'><FcGoogle className='text-2xl mr-2' />CONTINUE WITH GOOGLE</button>
             </div >
