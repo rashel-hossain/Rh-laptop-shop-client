@@ -11,9 +11,11 @@ const AllProductsCategory = ({ allcategory }) => {
             <div className="card-body">
                 <h2 className="card-title">{brandName}</h2>
                 {/* <p>{description.slice(0, 99) + '...Read More'}</p> */}
-                <p>{sellerName}</p>
-                <p>Re-sellPrice: ${reSellPrice}</p>
-                <p>OrginalPrice: ${orginalPrice}</p>
+                <p className='text-bold text-red-400'>{sellerName}</p>
+                <div className='flext justify-between'>
+                    <p className='text-green-500 font-bold'>${reSellPrice}</p>
+                    <p className='text-red-500 font-bold'>${orginalPrice}</p>
+                </div>
                 <p>Uses: {yearsOfUses} Year</p>
                 <p>Location: {location}</p>
                 <p>Email: {email}</p>

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import BookingModal from '../../ProductBookings/BookingModal/BookingModal';
 import ProductCard from './ProductCard';
 
 const SingleCategory = () => {
     const brands = useLoaderData();
     console.log(brands);
+    const [products, setProducts] = useState(null);
 
     return (
         <div className="mt-24">
@@ -18,11 +20,20 @@ const SingleCategory = () => {
                         key={brand._id}
                         brand={brand}
 
+                        setProducts={setProducts}
                     ></ProductCard>
-
                     )
                 }
             </div>
+
+            {
+                products &&
+                <BookingModal
+                    products={products}
+                    setProducts={setProducts}
+                ></BookingModal>
+            }
+
         </div>
     );
 };

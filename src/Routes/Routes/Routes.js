@@ -70,6 +70,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allbuyers',
                 element: <AllBuyers></AllBuyers>
+                // loader: ({params}) => fetch()
             },
             {
                 path: '/dashboard/addproducts',
