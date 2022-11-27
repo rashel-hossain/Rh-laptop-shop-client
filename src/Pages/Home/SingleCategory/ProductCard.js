@@ -9,20 +9,20 @@ const ProductCard = ({ brand, setProducts }) => {
 
     return (
         <div className="card bg-base-100 shadow-xl">
-            <figure><img src={image} alt="Shoes" /></figure>
+            <figure><img src={image} className="h-64" alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{productTitle}</h2>
-                <p className='font-bold text-blue-500'><FaUserCheck /> {sellerName}</p>
+                <p className='font-bold text-blue-500 flex items-center'><FaUserCheck className='mr-2' />{sellerName}</p>
 
                 <div className='flex'>
                     <p className='text-green-500 font-bold text-2xl'>${reSellPrice}</p>
-                    <p className='text-red-500 font-bold'>${orginalPrice}</p>
+                    <p className='text-red-500 font-bold line-through'>${orginalPrice}</p>
                     <p className='font-bold'>Used: <span>{yearsOfUses}</span> Year</p>
                 </div>
 
-                <div className=''>
-                    <p><MdMarkEmailRead /> {email}</p>
-                    <p><HiLocationMarker /> {location}</p>
+                <div  >
+                    <p className='flex items-center'><MdMarkEmailRead className='mr-2' /> {email}</p>
+                    <p className='flex items-center'><HiLocationMarker className='mr-2' /> {location}</p>
                 </div>
 
                 <div className="card-actions justify-center ">

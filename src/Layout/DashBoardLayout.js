@@ -26,7 +26,10 @@ const DashBoardLayout = () => {
                 <div className="drawer-side bg-info">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 text-base-content">
-                        <li><Link to="/dashboard/myorders">My Orders</Link></li>
+                        {
+                            isAdmin || isSeller ||
+                            <li><Link to="/dashboard/myorders">My Orders</Link></li>
+                        }
 
                         {
                             isAdmin &&
@@ -44,16 +47,16 @@ const DashBoardLayout = () => {
                             </>
                         }
 
-                        {
-                            isBuyer &&
-                            <>
-                                <li><Link to="/dashboard/myorderzz">My Order Buyer</Link></li>
-                            </>
-                        }
+                        {/* {
+                        isBuyer &&
+                        <>
+                            <li><Link to="/dashboard/myorderzz">My Order Buyer</Link></li>
+                        </>
+                    } */}
                     </ul>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
