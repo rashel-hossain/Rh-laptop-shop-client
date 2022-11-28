@@ -10,7 +10,7 @@ import Payment from "../../Pages/Dashboard/Payment/Payment";
 import Home from "../../Pages/Home/Home/Home";
 import SingleCategory from "../../Pages/Home/SingleCategory/SingleCategory";
 import Login from "../../Pages/Login/Login";
-import ErrorPage from "../../Pages/Shared/ErrorPage/ErrorPage";
+import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
 import SignUp from "../../Pages/SignUp/SignUp";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -22,6 +22,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/',
@@ -47,11 +48,11 @@ const router = createBrowserRouter([
                 path: '/category/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/catagory/${params.id}`),
                 element: <SingleCategory></SingleCategory>
-            },
-            {
-                path: '*',
-                element: <ErrorPage></ErrorPage>
             }
+            // {
+            //     path: '*',
+            //     element: <ErrorPage></ErrorPage>
+            // }
 
         ]
     },
@@ -59,6 +60,7 @@ const router = createBrowserRouter([
     {
         path: '/dashboard',
         element: <PrivateRoute><DashBoardLayout></DashBoardLayout></PrivateRoute>,
+        errorElement: <DisplayError></DisplayError>,
         children: [
             {
                 path: '/dashboard/myorders',
@@ -78,9 +80,15 @@ const router = createBrowserRouter([
             },
 
             {
-                path: '*',
-                element: <ErrorPage></ErrorPage>
+                path: '/dashboard/payment/:id',
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
             }
+
+            // {
+            //     path: '*',
+            //     element: <ErrorPage></ErrorPage>
+            // }
 
         ]
     }
