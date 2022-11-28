@@ -46,7 +46,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/category/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/catagory/${params.id}`),
+                loader: ({ params }) => fetch(`https://laptop-shop-server.vercel.app/catagory/${params.id}`),
                 element: <SingleCategory></SingleCategory>
             }
             // {
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
-                loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
+                loader: ({ params }) => fetch(`https://laptop-shop-server.vercel.app/bookings/${params.id}`)
             }
 
             // {
