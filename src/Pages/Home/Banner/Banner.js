@@ -12,7 +12,7 @@ const Banner = () => {
                         Welcome To <br /> RH-Laptop-Shop
                     </h2>
                     <p className='text-xl text-black'>There are many variations of Laptop available, We provide <br /> The best service have setisfied products in our customer.</p>
-                    <button className="btn btn-primary">Get Explore</button>
+                    <button className="btn btn-primary bg-gradient-to-r from-primary to-secondary text-white mt-2">Get Explore</button>
                 </div>
             </div>
 

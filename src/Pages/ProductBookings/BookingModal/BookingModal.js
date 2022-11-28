@@ -60,8 +60,8 @@ const BookingModal = ({ products, setProducts, refetch }) => {
                     <h3 className="text-lg font-bold">Model: {products?.productTitle}</h3>
                     <form onSubmit={handleBooking} className='grid gap-2 grid-cols-1 mt-6'>
                         <input name="productTitle" type="text" defaultValue={products?.productTitle} disabled placeholder="Your product model name" className="input w-full input-bordered" />
-                        <input name="price" type="text" defaultValue={products?.reSellPrice} readOnly placeholder="Your price" className="input w-full input-bordered" />
-                        <input name="email" type="email" defaultValue={user?.email} readOnly placeholder="Your email address" className="input w-full input-bordered" />
+                        <input name="price" type="text" defaultValue={products?.reSellPrice} disabled placeholder="Your price" className="input w-full input-bordered" />
+                        <input name="email" type="email" defaultValue={user?.email} disabled placeholder="Your email address" className="input w-full input-bordered" />
                         <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
                         <input name="meetLocation" type="text" placeholder="Write meet location..." className="input w-full input-bordered" />
                         <br />

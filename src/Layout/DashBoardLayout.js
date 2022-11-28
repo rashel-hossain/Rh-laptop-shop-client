@@ -46,13 +46,13 @@ const DashBoardLayout = () => {
                             </>
                         }
 
+                        {
+                            isBuyer &&
+                            <>
+                                <li><Link to="/dashboard/myorders">My Orders</Link></li>
+                            </>
+                        }
 
-                        {/* {
-                        isBuyer &&
-                        <>
-                            <li><Link to="/dashboard/myorderzz">My Order Buyer</Link></li>
-                        </>
-                    } */}
                     </ul>
                 </div>
             </div>

@@ -34,7 +34,7 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name, data.email);
+                        saveUser(data.name, data.email, data.role);
                     })
                     .catch(err => console.log(err));
 
@@ -44,8 +44,8 @@ const SignUp = () => {
             })
     }
 
-    const saveUser = (name, email) => {
-        const user = { name, email };
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role };
         fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
@@ -117,9 +117,9 @@ const SignUp = () => {
                         {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                     </div>
 
-                    <div className="form-control mb-4 mt-2">
+                    <div className="form-control mt-2">
                         <label className="label">
-                            <span className="label-text text-lg font-medium text-secondary">
+                            <span className="label-text text-sm font-medium">
                                 Type of account?
                             </span>
                         </label>
@@ -129,12 +129,12 @@ const SignUp = () => {
                                     type="radio"
                                     name="radio-1"
                                     className="radio"
-                                    value="Buyer"
+                                    value="buyer"
                                     {...register("role")}
                                     checked
                                 />
                                 <label className="label">
-                                    <span className="label-text text-secondary font-medium">
+                                    <span className="label-text font-medium">
                                         Buyer
                                     </span>
                                 </label>
@@ -144,11 +144,11 @@ const SignUp = () => {
                                     type="radio"
                                     name="radio-1"
                                     className="radio"
-                                    value="Seller"
+                                    value="seller"
                                     {...register("role")}
                                 />
                                 <label className="label">
-                                    <span className="label-text text-secondary font-medium">
+                                    <span className="label-text font-medium">
                                         Seller
                                     </span>
                                 </label>
@@ -161,7 +161,7 @@ const SignUp = () => {
                         {signUpError && <p className='text-red-600'>{signUpError}</p>}
                     </div>
                 </form>
-                <p>Already Have an account?<Link to="/login" className='text-secondary'>Please Login</Link></p>
+                <p>Already Have an account? <Link to="/login" className='text-primary font-bold text-sm underline'>Please Login</Link></p>
                 <div className="divider">OR</div>
                 <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'><FcGoogle className='text-2xl mr-2' />CONTINUE WITH GOOGLE</button>
             </div >

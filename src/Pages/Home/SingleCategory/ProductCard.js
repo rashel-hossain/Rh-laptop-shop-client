@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FaUserCheck } from 'react-icons/fa';
 import { HiLocationMarker } from 'react-icons/hi';
 import { MdMarkEmailRead } from 'react-icons/md';
 
 const ProductCard = ({ brand, setProducts }) => {
-    const { _id, image, productTitle, sellerName, reSellPrice, orginalPrice, yearsOfUses, location, email } = brand;
+    const { image, productTitle, sellerName, reSellPrice, orginalPrice, yearsOfUses, location, email } = brand;
 
     return (
         <div className="card bg-base-100 shadow-xl">
@@ -30,7 +29,7 @@ const ProductCard = ({ brand, setProducts }) => {
 
                     <label
                         htmlFor="booking-modal"
-                        className="btn btn-primary text-white w-full"
+                        className="btn btn-primary bg-gradient-to-r from-primary to-secondary text-white w-full"
                         onClick={() => setProducts(brand)}
                     >Book Now</label>
                 </div>

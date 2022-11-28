@@ -20,7 +20,8 @@ const MyOrder = () => {
     });
     console.log(bookings);
     return (
-        <div>
+        <div className='mx-2'>
+            <h2 className="text-2xl mb-2">My Order List</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>

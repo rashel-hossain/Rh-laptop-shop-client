@@ -80,7 +80,7 @@ const Login = () => {
                 <div>
 
                 </div>
-                <p>Are you new to RH-Laptop? <Link to="/signup" className='text-secondary'>Create a account.</Link></p>
+                <p>Are you new to RH-Laptop? <Link to="/signup" className='text-primary font-bold text-sm underline'>Create a account.</Link></p>
                 <div className="divider">OR</div>
                 <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'><FcGoogle className='text-2xl mr-2' />CONTINUE WITH GOOGLE</button>
             </div>
