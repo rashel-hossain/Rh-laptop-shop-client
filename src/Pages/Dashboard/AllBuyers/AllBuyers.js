@@ -6,8 +6,6 @@ const AllBuyers = () => {
         queryKey: ['users'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/users');
-
-            // const res = await fetch(`http://localhost:5000/users?email=${users?.email}`);
             const data = await res.json();
             return data;
         }
@@ -35,13 +33,15 @@ const AllBuyers = () => {
                         </thead>
                         <tbody>
                             {
-                                users.map((user, i) => <tr key={user._id}>
-                                    <th>{i + 1}</th>
-                                    <td>{user.name}</td>
-                                    <td>{user.email}</td>
-                                    {/* <td><button className='btn btn-sm btn-primary'>Verify</button></td> */}
-                                    <td>{user?.role !== 'admin' && <button onClick={() => handleDeleteBuyer(user._id)} className='btn btn-error btn-sm'>Delete</button>}</td>
-                                </tr>)
+                                users.map((user, i) => {
+                                    return user.role === "buyer" && <tr key={user._id}>
+                                        <th>{i + 1}</th>
+                                        <td>{user.name}</td>
+                                        <td>{user.email}</td>
+                                        {/* <td><button className='btn btn-sm btn-primary'>Verify</button></td> */}
+                                        <td>{user?.role !== 'admin' && <button onClick={() => handleDeleteBuyer(user._id)} className='btn btn-error btn-sm'>Delete</button>}</td>
+                                    </tr>
+                                })
                             }
                         </tbody>
                     </table>
@@ -85,7 +85,7 @@ const AllBuyers = () => {
                             </th>
                         </tr>
                     </tbody>
-                    
+
                 </table>
             </div> */}
         </div>
