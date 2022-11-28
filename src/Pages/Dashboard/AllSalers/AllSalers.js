@@ -1,9 +1,10 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-// import toast from 'react-hot-toast';
+import toast from 'react-hot-toast';
+import Loading from '../../Shared/Loading/Loading';
 
 const AllSalers = () => {
-    const { data: users = [] } = useQuery({
+    const { data: users, isLoading } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/users');
@@ -11,11 +12,24 @@ const AllSalers = () => {
             return data;
         }
     });
-    console.log('ki somossha??', users)
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
 
     // handleDeleteSeller
-    const handleDeleteSeller = () => {
+    const handleDeleteSeller = (user) => {
+        // fetch(`http://localhost:5000/users/${user._id}`, {
+        //     method: 'DELETE'
 
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         refetch();
+        //         toast.success(`${user.name} deleted succesfully`);
+        //     })
+        toast.success(`Deleted succesfully`);
     }
 
 

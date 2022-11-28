@@ -12,6 +12,7 @@ import SingleCategory from "../../Pages/Home/SingleCategory/SingleCategory";
 import Login from "../../Pages/Login/Login";
 import ErrorPage from "../../Pages/Shared/ErrorPage/ErrorPage";
 import SignUp from "../../Pages/SignUp/SignUp";
+import AdminRoute from "../AdminRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
 
     {
         path: '/dashboard',
-        element: <PrivateRoute><DashBoardLayout></DashBoardLayout> </PrivateRoute>,
+        element: <PrivateRoute><DashBoardLayout></DashBoardLayout></PrivateRoute>,
         children: [
             {
                 path: '/dashboard/myorders',
@@ -65,29 +66,15 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/allsalers',
-                element: <AllSalers></AllSalers>
+                element: <AdminRoute><AllSalers></AllSalers></AdminRoute>
             },
             {
                 path: '/dashboard/allbuyers',
-                element: <AllBuyers></AllBuyers>
+                element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
             },
             {
                 path: '/dashboard/addproducts',
                 element: <AddProduct></AddProduct>,
-            },
-
-            // {
-            //     path: '/dashboard/allusers',
-            //     element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
-            // },
-            // {
-            //     path: '/dashboard/adddoctor',
-            //     element: <AdminRoute><AddProduct></AddProduct></AdminRoute>
-            // },
-            {
-                path: '/dashboard/payment',
-                element: <Payment></Payment>
-                // loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
             },
 
             {
