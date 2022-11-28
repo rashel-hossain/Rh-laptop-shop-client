@@ -18,17 +18,7 @@ const AllSalers = () => {
     }
 
     // handleDeleteSeller
-    const handleDeleteSeller = (user) => {
-        // fetch(`http://localhost:5000/users/${user._id}`, {
-        //     method: 'DELETE'
-
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         refetch();
-        //         toast.success(`${user.name} deleted succesfully`);
-        //     })
+    const handleDeleteSeller = () => {
         toast.success(`Deleted succesfully`);
     }
 
@@ -54,6 +44,7 @@ const AllSalers = () => {
                                         <th>{i + 1}</th>
                                         <td>{user.name}</td>
                                         <td>{user.email}</td>
+
                                         {/* <td><button className='btn btn-sm btn-primary'>Verify</button></td> */}
                                         <td>{user?.role !== 'admin' && <button
                                             onClick={() => handleDeleteSeller(user._id)}

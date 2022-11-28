@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
 
 const AllBuyers = () => {
     const { data: users = [] } = useQuery({
@@ -14,7 +15,7 @@ const AllBuyers = () => {
 
     // handleDeleteBuyer
     const handleDeleteBuyer = () => {
-
+        toast.success(`Deleted succesfully`);
     }
 
     return (
@@ -50,6 +51,7 @@ const AllBuyers = () => {
 
 
             {/* ********* Daisy Ui Raw Table template ********** */}
+
             {/* <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>
