@@ -66,7 +66,7 @@ const AddProduct = () => {
                         .then(result => {
                             console.log(result);
                             toast.success(`${data.brandName}  is successfully added.`)
-                            navigate('/dashboard/myprodutcs');
+                            navigate('/dashboard/myproducts');
                         })
                 }
 

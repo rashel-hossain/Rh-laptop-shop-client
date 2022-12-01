@@ -8,9 +8,6 @@ import toast from 'react-hot-toast';
 
 const ProductCard = ({ brand, setProducts }) => {
     const { _id, image, productTitle, sellerName, reSellPrice, orginalPrice, yearsOfUses, location, email, postDate } = brand;
-    // const date = format(postDate, 'pp PP');
-    // console.log(postDate);
-
 
 
     // isReported True: handleReportedItems
@@ -25,7 +22,6 @@ const ProductCard = ({ brand, setProducts }) => {
             })
         console.log(id);
     }
-
 
     return (
         <div className="card bg-base-100 shadow-xl">
@@ -50,19 +46,18 @@ const ProductCard = ({ brand, setProducts }) => {
                     <p className='flex items-center'><MdMarkEmailRead className='mr-2' /> {email}</p>
                     <div className='flex justify-between'>
                         <p className='flex items-center'><HiLocationMarker className='mr-2' /> {location}</p>
-                        <p className='flex items-center'><FaRegClock className='mr-2' />
-                            {/* {
-                                brand?.postDate && format(brand?.postDate, "pp PP")
-                            } */}
-
-                            {/* {date} */}
-                        </p>
                     </div>
+                    {
+                        brand?.postDate &&
+                        <p className='flex items-center'><FaRegClock className='mr-2' />
+                            {
+                                format(new Date(brand?.postDate), 'pp PP')
+                            }
+                        </p>
+                    }
                 </div>
 
                 <div className="card-actions justify-center ">
-                    {/* <Link to={`/bookNow/${_id}`} className='w-full'><button className="btn btn-wide justify-center items-center w-full">Book Now</button></Link> */}
-
                     <label
                         htmlFor="booking-modal"
                         className="btn btn-primary bg-gradient-to-r from-primary to-secondary text-white w-full"

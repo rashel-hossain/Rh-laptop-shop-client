@@ -16,9 +16,20 @@ const MyProducts = () => {
         }
     });
 
-    console.log('55555', users)
+    // console.log('55555', users)
 
-    // fetch(`http://localhost:5000/myproduct?email=${user?.email}`)
+    // isAdvertiseds
+    const handleAdvertiseds = id => {
+        fetch(`http://localhost:5000/advertiseds/${id}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast.success('advertiseds successfully');
+                refetch();
+            })
+    }
 
     if (isLoading) {
         return <Loading></Loading>
@@ -67,9 +78,17 @@ const MyProducts = () => {
                                     <td>{user.productTitle}</td>
                                     <td>{user.reSellPrice}</td>
 
-                                    <td> <button
-                                        onClick={() => handleDeleteProduct(user._id)}
-                                        className='btn btn-error btn-sm ml-3'>Delete</button>
+                                    <td>
+                                        {
+                                            user?.isAdvertiseds ?
+                                                < button className='btn btn-primary btn-sm ml-3'>Advertised</button>
+                                                :
+                                                <button onClick={() => handleAdvertiseds(user._id)}
+                                                    className='btn btn-success btn-sm ml-3'>Advertise</button>
+                                        }
+                                        <button
+                                            onClick={() => handleDeleteProduct(user._id)}
+                                            className='btn btn-error btn-sm ml-3'>Delete</button>
                                     </td>
                                 </tr>
                             )
@@ -77,7 +96,7 @@ const MyProducts = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div >
     );
 };
 
