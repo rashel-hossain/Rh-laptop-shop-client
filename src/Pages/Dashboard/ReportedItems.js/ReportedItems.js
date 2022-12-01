@@ -1,44 +1,43 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useContext } from 'react';
-import { AuthContext } from '../../../contexts/AuthProvider';
+import React from 'react';
+import toast from 'react-hot-toast';
 import Loading from '../../Shared/Loading/Loading';
-import toast from 'react-hot-toast'
 
-const MyProducts = () => {
-    const { user } = useContext(AuthContext);
 
-    const { data: users = [], isLoading, refetch } = useQuery({
-        queryKey: ['users'],
+const ReportedItems = () => {
+
+    const { data: products, isLoading, refetch } = useQuery({
+        queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/myproducts?email=${user?.email}`);
+            const res = await fetch(`http://localhost:5000/reportedproducts`);
             const data = await res.json();
             return data;
         }
     });
 
-    console.log('55555', users)
-
-    // fetch(`http://localhost:5000/myproduct?email=${user?.email}`)
-
-    if (isLoading) {
-        return <Loading></Loading>
-    }
-
     const handleDeleteProduct = id => {
-        fetch(`http://localhost:5000/myproduct/${id}`, {
-            method: 'DELETE'
+        fetch(`http://localhost:5000/reportedproducts/${id}`, {
+            method: 'DELETE',
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+            // }
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
                 refetch();
-                toast.success('Delete successfully')
+                toast.success(`Deleted succesfully`);
             })
+    }
+
+    // isLoading
+    if (isLoading) {
+        return <Loading></Loading>
     }
 
     return (
         <div>
-            <h2 className='text-3xl'>My Products</h2>
+            <h2 className='text-3xl'>Reported Items</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
@@ -52,24 +51,26 @@ const MyProducts = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, i) =>
-                                <tr key={user._id}>
+                            products.map((product, i) =>
+                                <tr key={product._id}>
                                     <th>{i + 1}</th>
                                     <td>
                                         <div className="flex items-center space-x-3">
                                             <div className="avatar">
                                                 <div className="mask mask-squircle w-12 h-12">
-                                                    <img src={user.image} alt="" />
+                                                    <img src={product.image} alt="" />
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td>{user.productTitle}</td>
-                                    <td>{user.reSellPrice}</td>
+                                    <td>{product.productTitle}</td>
+                                    <td>{product.reSellPrice}</td>
 
-                                    <td> <button
-                                        onClick={() => handleDeleteProduct(user._id)}
-                                        className='btn btn-error btn-sm ml-3'>Delete</button>
+                                    <td>{product?.role !== 'admin' &&
+                                        <button
+                                            onClick={() => handleDeleteProduct(product._id)}
+                                            className='btn btn-error btn-sm ml-3'>Delete</button>
+                                    }
                                     </td>
                                 </tr>
                             )
@@ -81,4 +82,4 @@ const MyProducts = () => {
     );
 };
 
-export default MyProducts;
+export default ReportedItems;

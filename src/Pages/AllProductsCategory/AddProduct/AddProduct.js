@@ -18,7 +18,7 @@ const AddProduct = () => {
         queryKey: ['brandName'],
         queryFn: async () => {
             // homeCategories
-            const res = await fetch('https://laptop-shop-server.vercel.app/brandNames');
+            const res = await fetch('http://localhost:5000/brandNames');
             const data = await res.json();
             return data;
         }
@@ -47,7 +47,7 @@ const AddProduct = () => {
                         email: data.email,
                         location: data.location,
                         yearsOfUses: data.yearsOfUses,
-                        publishDate: new Date(),
+                        postDate: new Date(),
 
 
                         //m-76-5 8:13sec
@@ -55,7 +55,7 @@ const AddProduct = () => {
                     }
 
                     // add product server api, save the product in MongoDb database
-                    fetch('https://laptop-shop-server.vercel.app/addproduct', {
+                    fetch('http://localhost:5000/addproduct', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

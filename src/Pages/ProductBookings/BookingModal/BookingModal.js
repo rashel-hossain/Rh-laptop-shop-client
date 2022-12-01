@@ -2,20 +2,22 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
-const BookingModal = ({ products, setProducts, refetch }) => {
+const BookingModal = ({ products, setProducts }) => {
     const { user } = useContext(AuthContext);
     const handleBooking = event => {
         event.preventDefault();
 
         const form = event.target;
+        const name = form.name.value;
         const email = form.email.value;
         const productTitle = form.productTitle.value;
         const price = form.price.value;
         const phone = form.phone.value;
         const meetLocation = form.meetLocation.value;
-        // console.log(productTitle, price, phone, meetLocation);
+        // console.log(name, productTitle, price, phone, meetLocation);
 
         const booking = {
+            name,
             buyerEmail: email,
             phone,
             price,
@@ -29,7 +31,7 @@ const BookingModal = ({ products, setProducts, refetch }) => {
         02. Saved data when modal submit, then we get data other api in ('/myOrders')
         03. And show display ui in table success.
         */
-        fetch('https://laptop-shop-server.vercel.app/bookings', {
+        fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -42,7 +44,6 @@ const BookingModal = ({ products, setProducts, refetch }) => {
                 if (data.acknowledged) {
                     setProducts(null);
                     toast.success("Your booking is confirmed");
-                    refetch();
                 }
                 else {
                     toast.error(data.message);
@@ -56,11 +57,14 @@ const BookingModal = ({ products, setProducts, refetch }) => {
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box relative">
-                    <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label htmlFor="booking-modal"
+                        onClick={() => setProducts(null)}
+                        className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="text-lg font-bold">Model: {products?.productTitle}</h3>
                     <form onSubmit={handleBooking} className='grid gap-2 grid-cols-1 mt-6'>
                         <input name="productTitle" type="text" defaultValue={products?.productTitle} disabled placeholder="Your product model name" className="input w-full input-bordered" />
                         <input name="price" type="text" defaultValue={products?.reSellPrice} disabled placeholder="Your price" className="input w-full input-bordered" />
+                        <input name="name" type="text" defaultValue={user?.displayName} disabled placeholder="Your name" className="input w-full input-bordered" />
                         <input name="email" type="email" defaultValue={user?.email} disabled placeholder="Your email address" className="input w-full input-bordered" />
                         <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
                         <input name="meetLocation" type="text" placeholder="Write meet location..." className="input w-full input-bordered" />

@@ -1,12 +1,13 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+import Loading from '../../Shared/Loading/Loading';
 
 const AllBuyers = () => {
-    const { data: users = [] } = useQuery({
+    const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('https://laptop-shop-server.vercel.app/users');
+            const res = await fetch(`http://localhost:5000/users?role=buyer`);
             const data = await res.json();
             return data;
         }
@@ -14,10 +15,24 @@ const AllBuyers = () => {
 
 
     // handleDeleteBuyer
-    const handleDeleteBuyer = () => {
-        toast.success(`Deleted succesfully`);
+    const handleDeleteBuyer = id => {
+        fetch(`http://localhost:5000/user/${id}`, {
+            method: 'DELETE',
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+            // }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                refetch();
+                toast.success(`Deleted succesfully`);
+            })
     }
 
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div>
             <div>
@@ -34,15 +49,15 @@ const AllBuyers = () => {
                         </thead>
                         <tbody>
                             {
-                                users.map((user, i) => {
-                                    return user.role === "buyer" && <tr key={user._id}>
+                                users.map((user, i) =>
+                                    <tr key={user._id}>
                                         <th>{i + 1}</th>
                                         <td>{user.name}</td>
                                         <td>{user.email}</td>
                                         {/* <td><button className='btn btn-sm btn-primary'>Verify</button></td> */}
                                         <td>{user?.role !== 'admin' && <button onClick={() => handleDeleteBuyer(user._id)} className='btn btn-error btn-sm'>Delete</button>}</td>
                                     </tr>
-                                })
+                                )
                             }
                         </tbody>
                     </table>

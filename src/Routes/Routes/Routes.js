@@ -6,7 +6,10 @@ import Blog from "../../Pages/Blog/Blog";
 import AllBuyers from "../../Pages/Dashboard/AllBuyers/AllBuyers";
 import AllSalers from "../../Pages/Dashboard/AllSalers/AllSalers";
 import MyOrder from "../../Pages/Dashboard/MyOrder/MyOrder";
+import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
 import Payment from "../../Pages/Dashboard/Payment/Payment";
+import ReportedItems from "../../Pages/Dashboard/ReportedItems.js/ReportedItems";
+import AdvertisedProduct from "../../Pages/Home/AdvertisedProducts/AdvertisedProduct";
 import Home from "../../Pages/Home/Home/Home";
 import SingleCategory from "../../Pages/Home/SingleCategory/SingleCategory";
 import Login from "../../Pages/Login/Login";
@@ -46,9 +49,14 @@ const router = createBrowserRouter([
             },
             {
                 path: '/category/:id',
-                loader: ({ params }) => fetch(`https://laptop-shop-server.vercel.app/catagory/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:5000/catagory/${params.id}`),
                 element: <SingleCategory></SingleCategory>
-            }
+            },
+            {
+                path: '/category/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/catagory/${params.id}`),
+                element: <AdvertisedProduct></AdvertisedProduct>
+            },
             // {
             //     path: '*',
             //     element: <ErrorPage></ErrorPage>
@@ -75,14 +83,21 @@ const router = createBrowserRouter([
                 element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
             },
             {
+                path: '/dashboard/reporteditems',
+                element: <AdminRoute><ReportedItems></ReportedItems></AdminRoute>
+            },
+            {
                 path: '/dashboard/addproducts',
                 element: <AddProduct></AddProduct>,
             },
-
+            {
+                path: '/dashboard/myproducts',
+                element: <MyProducts></MyProducts>
+            },
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
-                loader: ({ params }) => fetch(`https://laptop-shop-server.vercel.app/bookings/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
             }
 
             // {

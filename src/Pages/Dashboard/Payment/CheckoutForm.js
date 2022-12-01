@@ -14,7 +14,7 @@ const CheckoutForm = ({ booking }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("https://laptop-shop-server.vercel.app/create-payment-intent", {
+        fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -87,11 +87,10 @@ const CheckoutForm = ({ booking }) => {
                 bookingId: _id
             }
 
-            fetch('https://laptop-shop-server.vercel.app/payments', {
+            fetch('http://localhost:5000/payments', {
                 method: 'POST',
                 headers: {
-                    'content-type': 'application/json',
-                    // authorization: `bearer ${localStorage.getItem('accessToken')}`
+                    'content-type': 'application/json'
                 },
                 body: JSON.stringify(payments)
             })
