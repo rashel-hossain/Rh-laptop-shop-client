@@ -51,12 +51,8 @@ const router = createBrowserRouter([
                 path: '/category/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/catagory/${params.id}`),
                 element: <SingleCategory></SingleCategory>
-            },
-            {
-                path: '/category/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/catagory/${params.id}`),
-                element: <AdvertisedProduct></AdvertisedProduct>
-            },
+            }
+
             // {
             //     path: '*',
             //     element: <ErrorPage></ErrorPage>

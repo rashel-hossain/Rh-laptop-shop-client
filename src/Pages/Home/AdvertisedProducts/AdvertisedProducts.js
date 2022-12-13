@@ -14,7 +14,8 @@ const AdvertisedProducts = () => {
         }
     });
     console.log(advertiseds, 'advertised9999')
-    //
+
+    // 
     if (isLoading) {
         return <Loading></Loading>
     }
