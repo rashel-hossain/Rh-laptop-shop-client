@@ -25,8 +25,8 @@ const ContactForm = () => {
                             <h4 className='text-2xl text-white font-bold text-center'>Contact Us</h4>
                             <h2 className='text-lg text-white text-center mb-6'>Stay connected with us</h2>
                             <div className='mx-2'>
-                                <input type="email" name='email_form' id='emailForm' placeholder="Your Email Address" className="input input-bordered input-primary w-full mr-2" />
-                                <input type="text" name="subject" id='subject' placeholder="Subject" className="input input-bordered input-primary w-full my-2" />
+                                <input type="email" name='email_form' id='emailForm' placeholder="Your Email Address" className="input input-bordered input-primary w-full mr-2" required />
+                                <input type="text" name="subject" id='subject' placeholder="Subject" className="input input-bordered input-primary w-full my-2" required />
                             </div>
                             <div className='mx-2'>
                                 <textarea name='message' id='message' className="w-full textarea textarea-primary" placeholder="Write your message...."></textarea>

@@ -47,6 +47,8 @@ const AddProduct = () => {
                         email: data.email,
                         location: data.location,
                         yearsOfUses: data.yearsOfUses,
+                        productDescription: data.productDescription,
+                        // productStatus: data.productStatus,
                         postDate: new Date(),
 
 
@@ -173,13 +175,16 @@ const AddProduct = () => {
                     </div>
 
                     <label className='mt-4'>Product Description
-                        <textarea name='message' className="textarea textarea-bordered h-24 w-full" placeholder="Write description...."></textarea>
+                        <textarea
+                            {...register("productDescription", { required: "Your phone is required!" })}
+                            className="textarea textarea-bordered h-24 w-full" placeholder="Write description...."
+                        ></textarea>
                     </label>
                 </div>
                 <input className='btn btn-primary w-full mt-4' type="submit" value="Add Product" />
-            </form>
+            </form >
 
-        </div>
+        </div >
     );
 };
 

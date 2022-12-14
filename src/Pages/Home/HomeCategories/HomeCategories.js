@@ -18,7 +18,7 @@ const HomeCategories = () => {
 
     return (
         <div className="mt-24">
-            <div className='text-center mb-24'>
+            <div className='text-center mb-16'>
                 <h3 className='text-3xl font-bold text-black-600 uppercase'>Meet our Laptop Categories</h3>
                 <h2 className='text-2xl font-semibold mb-15'>Best Laptop of 2022</h2>
             </div>

@@ -7,7 +7,7 @@ const HomeCategory = ({ category }) => {
 
     return (
         <div className="card bg-base-100 shadow-xl">
-            <figure><img src={img} alt="Shoes" /></figure>
+            <figure><img src={img} alt="Loading..." /></figure>
             <div className="card-body">
                 <h2 className="card-title text-pink-600 font-bold">{title}</h2>
                 <p>{description?.slice(0, 99) + '...Read More'}</p>
