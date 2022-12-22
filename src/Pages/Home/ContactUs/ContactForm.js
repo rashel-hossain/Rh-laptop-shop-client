@@ -1,26 +1,13 @@
 import React from 'react';
 import contactbg from '../../../assets/cantacbg/contactbg.jpg'
-import emailjs from '@emailjs/browser'
-import toast from 'react-hot-toast'
 
 const ContactForm = () => {
-
-    const sendEmail = (e) => {
-        e.preventDefault();
-        const form = e.target;
-        emailjs.sendForm(
-            process.env.REACT_APP_EMAILJS_SERVICE_ID,
-            process.env.REACT_APP_EMAILJS_TEMPLATE_ID, e.target,
-            process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
-        toast.success("Success fully send");
-        form.reset();
-    }
 
     return (
         <div className='mt-24'>
             <section className='py-6' style={{ background: `url(${contactbg})` }}>
                 <div className='flex justify-center items-center'>
-                    <form onSubmit={sendEmail}>
+                    <form>
                         <div>
                             <h4 className='text-2xl text-white font-bold text-center'>Contact Us</h4>
                             <h2 className='text-lg text-white text-center mb-6'>Stay connected with us</h2>
