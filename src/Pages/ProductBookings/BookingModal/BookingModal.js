@@ -31,7 +31,7 @@ const BookingModal = ({ products, setProducts }) => {
         02. Saved data when modal submit, then we get data other api in ('/myOrders')
         03. And show display ui in table success.
         */
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://laptop-shop-server.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

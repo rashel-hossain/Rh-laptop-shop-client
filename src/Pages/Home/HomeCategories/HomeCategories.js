@@ -9,7 +9,7 @@ const HomeCategories = () => {
     const { data: homeCategories = [] } = useQuery({
         queryKey: ['homeCategories'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/homeCategories');
+            const res = await fetch('https://laptop-shop-server.vercel.app/homeCategories');
             const data = await res.json();
             return data;
         }

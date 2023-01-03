@@ -9,14 +9,14 @@ const ReportedItems = () => {
     const { data: products, isLoading, refetch } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/reportedproducts`);
+            const res = await fetch(`https://laptop-shop-server.vercel.app/reportedproducts`);
             const data = await res.json();
             return data;
         }
     });
 
     const handleDeleteProduct = id => {
-        fetch(`http://localhost:5000/reportedproducts/${id}`, {
+        fetch(`https://laptop-shop-server.vercel.app/reportedproducts/${id}`, {
             method: 'DELETE',
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('accessToken')}`

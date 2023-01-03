@@ -7,7 +7,7 @@ const AllSalers = () => {
     const { data: users, isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/users?role=seller`);
+            const res = await fetch(`https://laptop-shop-server.vercel.app/users?role=seller`);
             const data = await res.json();
             return data;
         }
@@ -19,7 +19,7 @@ const AllSalers = () => {
 
     // handleDeleteSeller
     const handleDeleteSeller = id => {
-        fetch(`http://localhost:5000/user/${id}`, {
+        fetch(`https://laptop-shop-server.vercel.app/user/${id}`, {
             method: 'DELETE',
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -35,7 +35,7 @@ const AllSalers = () => {
 
     // handleVerify seller
     const handleVerify = id => {
-        fetch(`http://localhost:5000/sellerVerified/${id}`, {
+        fetch(`https://laptop-shop-server.vercel.app/sellerVerified/${id}`, {
             method: 'PUT',
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('accessToken')}`

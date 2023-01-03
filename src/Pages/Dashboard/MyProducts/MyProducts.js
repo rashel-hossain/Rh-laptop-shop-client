@@ -10,7 +10,7 @@ const MyProducts = () => {
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/myproducts?email=${user?.email}`);
+            const res = await fetch(`https://laptop-shop-server.vercel.app/myproducts?email=${user?.email}`);
             const data = await res.json();
             return data;
         }
@@ -20,7 +20,7 @@ const MyProducts = () => {
 
     // isAdvertiseds
     const handleAdvertiseds = id => {
-        fetch(`http://localhost:5000/advertiseds/${id}`, {
+        fetch(`https://laptop-shop-server.vercel.app/advertiseds/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -36,7 +36,7 @@ const MyProducts = () => {
     }
 
     const handleDeleteProduct = id => {
-        fetch(`http://localhost:5000/myproduct/${id}`, {
+        fetch(`https://laptop-shop-server.vercel.app/myproduct/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

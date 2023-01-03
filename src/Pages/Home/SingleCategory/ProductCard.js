@@ -12,7 +12,7 @@ const ProductCard = ({ brand, setProducts }) => {
 
     // isReported True: handleReportedItems
     const handleReportedItems = id => {
-        fetch(`http://localhost:5000/reportedproducts/${id}`, {
+        fetch(`https://laptop-shop-server.vercel.app/reportedproducts/${id}`, {
             method: 'PUT',
         })
             .then(res => res.json())
