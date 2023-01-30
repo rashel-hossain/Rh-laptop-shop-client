@@ -6,8 +6,11 @@ const AdvertisedProduct = ({ advertise }) => {
     console.log(advertise, 'advertised')
     return (
         <div>
-            <div className="card bg-base-100 shadow-xl image-full">
-                <figure><img src={image} alt="" /></figure>
+            <div style={{ backgroundImage: `url(${image})`, objectFit:'cover', backgroundSize:'cover'}} 
+            className="card bg-base-100 shadow-xl image-full">
+                
+                {/* <figure><img src={image} alt="" /></figure> */}
+
                 <div className="card-body">
                     <h1 className='text-3xl font-bold'>{productTitle}</h1>
                     <p>{productDescription}</p>

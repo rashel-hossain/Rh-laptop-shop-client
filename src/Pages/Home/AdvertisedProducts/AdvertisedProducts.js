@@ -20,7 +20,7 @@ const AdvertisedProducts = () => {
     }
 
     return (
-        <div>
+        <div className='px-4 md:px-0'>
             {
                 advertiseds.length > 0 &&
                 <div className="mt-24">
