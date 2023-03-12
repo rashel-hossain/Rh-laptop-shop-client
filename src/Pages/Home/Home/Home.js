@@ -9,15 +9,18 @@ import Reviews from '../UserReview/Reviews';
 
 const Home = () => {
     return (
-        <div>
+        <section>
             <Banner></Banner>
-            <BigOffer></BigOffer>
-            <AdvertisedProducts></AdvertisedProducts>
-            <HomeCategories></HomeCategories>
-            <ClientMeeting></ClientMeeting>
-            <Reviews></Reviews>
-            <ContactForm></ContactForm>
-        </div>
+            <div className='max-w-[1280px] mx-auto'>
+                <HomeCategories></HomeCategories>
+                <BigOffer></BigOffer>
+                <AdvertisedProducts></AdvertisedProducts>
+                <ClientMeeting></ClientMeeting>
+                <Reviews></Reviews>
+                <ContactForm></ContactForm>
+            </div>
+        </section>
+
     );
 };
 

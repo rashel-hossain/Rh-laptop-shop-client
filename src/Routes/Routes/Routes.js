@@ -13,6 +13,7 @@ import AdvertisedProduct from "../../Pages/Home/AdvertisedProducts/AdvertisedPro
 import Home from "../../Pages/Home/Home/Home";
 import SingleCategory from "../../Pages/Home/SingleCategory/SingleCategory";
 import Login from "../../Pages/Login/Login";
+// import ContactUs from "../../Pages/Shared/ContactUs/ContactUs";
 import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
 import SignUp from "../../Pages/SignUp/SignUp";
 import AdminRoute from "../AdminRoute/AdminRoute";
@@ -51,7 +52,11 @@ const router = createBrowserRouter([
                 path: '/category/:id',
                 loader: ({ params }) => fetch(`https://laptop-shop-server.vercel.app/catagory/${params.id}`),
                 element: <SingleCategory></SingleCategory>
-            }
+            },
+            // {
+            //     path: '/contact-us',
+            //     element: <ContactUs></ContactUs>
+            // }
 
             // {
             //     path: '*',

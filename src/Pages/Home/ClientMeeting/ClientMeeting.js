@@ -23,7 +23,7 @@ const ClientMeeting = () => {
                     <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
                         <img
                             className="object-cover w-full h-56 md:h-64 xl:h-80"
-                            src="https://fitsmallbusiness.com/wp-content/uploads/2020/09/FeatureImage_client_meeting.jpg"
+                            src="https://res.cloudinary.com/ddex1kbr7/image/upload/v1678594778/happy-diverse-office-workers-team-laughing-together-group-meeting-cheerful-funny-joke-work-corporate-business-excited-smiling-141680673_zfav0t.jpg"
                             alt=""
                         />
                         <div className="absolute inset-x-0 bottom-0 px-6 py-4 bg-black bg-opacity-75">
@@ -37,7 +37,7 @@ const ClientMeeting = () => {
                     <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
                         <img
                             className="object-cover w-full h-56 md:h-64 xl:h-80"
-                            src="https://www.incimages.com/uploaded_files/image/1920x1080/getty_473909426_129584.jpg"
+                            src="https://res.cloudinary.com/ddex1kbr7/image/upload/v1678593984/working-on-plans-in-board-room-scaled_gl1jbw.jpg"
                             alt=""
                         />
                         <div className="absolute inset-x-0 bottom-0 px-6 py-4 bg-black bg-opacity-75">
@@ -51,7 +51,7 @@ const ClientMeeting = () => {
                     <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
                         <img
                             className="object-cover w-full h-56 md:h-64 xl:h-80"
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/A_meeting_between_a_man_and_a_woman.jpg/1200px-A_meeting_between_a_man_and_a_woman.jpg"
+                            src="https://res.cloudinary.com/ddex1kbr7/image/upload/v1678594978/960x0_vggsfa.jpg"
                             alt=""
                         />
                         <div className="absolute inset-x-0 bottom-0 px-6 py-4 bg-black bg-opacity-75">
@@ -65,7 +65,7 @@ const ClientMeeting = () => {
                     <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
                         <img
                             className="object-cover w-full h-56 md:h-64 xl:h-80"
-                            src="https://miro.medium.com/max/700/1*11SddVtxjLi2SwVtSBB_Uw.jpeg"
+                            src="https://fitsmallbusiness.com/wp-content/uploads/2020/09/FeatureImage_client_meeting.jpg"
                             alt=""
                         />
                         <div className="absolute inset-x-0 bottom-0 px-6 py-4 bg-black bg-opacity-75">
