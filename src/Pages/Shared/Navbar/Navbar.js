@@ -40,7 +40,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 {/* <Link to='/' className="btn btn-ghost normal-case text-xl font-bold">Laptop-Shop</Link> */}
-                <Link to='/' className="btn btn-ghost normal-case text-2xl font-bold"><span className='text-white'>RH-</span><h1 className='text-red-500'>LAPTOP-SHOP</h1>
+                <Link to='/' className="btn btn-ghost normal-case text-2xl font-bold"><span className='text-white'>RH-</span><h1 className='text-yellow-400'>LAPTOP-SHOP</h1>
                     {/* <img style={{ width: "180px", height: "40px", position: "absolute" }} src={RhLaptopShop} alt="" /> */}
                 </Link>
             </div>
