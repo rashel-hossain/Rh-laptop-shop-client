@@ -50,12 +50,9 @@ const AddProduct = () => {
                         productDescription: data.productDescription,
                         // productStatus: data.productStatus,
                         postDate: new Date(),
-
-
-                        //m-76-5 8:13sec
+                        //m76-5-8:13s
                         image: imgData.data.url
                     }
-
                     // add product server api, save the product in MongoDb database
                     fetch('https://laptop-shop-server.vercel.app/addproduct', {
                         method: 'POST',
@@ -71,15 +68,11 @@ const AddProduct = () => {
                             navigate('/dashboard/myproducts');
                         })
                 }
-
             })
-
     }
-
     if (isLoading) {
         return <Loading></Loading>
     }
-
     return (
         <div className='p-7'>
             <h2 className="text-2xl font-bold text-center">Add New Product</h2>
@@ -93,7 +86,6 @@ const AddProduct = () => {
                                 className="input input-bordered w-full " />
                             {errors.productTitle && <p className='text-red-600'>{errors.productTitle?.message}</p>}
                         </div>
-
                         <div className="form-control w-full ">
                             <label className="label"><span className="label-text font-bold text-primary text-md">Seller Name</span></label>
                             <input type="text"
@@ -102,7 +94,6 @@ const AddProduct = () => {
                             {errors.sellerName && <p className='text-red-600'>{errors.sellerName?.message}</p>}
                         </div>
                     </div>
-
                     <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
                         <div className="form-control w-full ">
                             <label className="label"><span className="label-text font-bold text-primary text-md">Re-Sell Price</span></label>
@@ -126,7 +117,6 @@ const AddProduct = () => {
                             {errors.yearsOfUses && <p className='text-red-600'>{errors.yearsOfUses?.message}</p>}
                         </div>
                     </div>
-
                     <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-4'>
                         <div className="form-control w-full ">
                             <label className="label"><span className="label-text font-bold text-primary text-md">Brand Name</span></label>
@@ -149,7 +139,6 @@ const AddProduct = () => {
                             {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
                         </div>
                     </div>
-
                     <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
                         <div className="form-control w-full ">
                             <label className="label"><span className="label-text font-bold text-primary text-md">Product Photo</span></label>
@@ -173,7 +162,6 @@ const AddProduct = () => {
                             {errors.phone && <p className='text-red-600'>{errors.phone?.message}</p>}
                         </div>
                     </div>
-
                     <label className='mt-4'>Product Description
                         <textarea
                             {...register("productDescription", { required: "Your phone is required!" })}
@@ -183,7 +171,6 @@ const AddProduct = () => {
                 </div>
                 <input className='btn btn-primary w-full mt-4' type="submit" value="Add Product" />
             </form >
-
         </div >
     );
 };

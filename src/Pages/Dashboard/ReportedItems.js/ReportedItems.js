@@ -3,9 +3,7 @@ import React from 'react';
 import toast from 'react-hot-toast';
 import Loading from '../../Shared/Loading/Loading';
 
-
 const ReportedItems = () => {
-
     const { data: products, isLoading, refetch } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
@@ -29,12 +27,9 @@ const ReportedItems = () => {
                 toast.success(`Deleted succesfully`);
             })
     }
-
-    // isLoading
     if (isLoading) {
         return <Loading></Loading>
     }
-
     return (
         <div>
             <h2 className='text-3xl'>Reported Items</h2>

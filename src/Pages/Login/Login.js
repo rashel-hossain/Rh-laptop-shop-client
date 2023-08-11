@@ -11,12 +11,9 @@ const Login = () => {
     const [loginError, setLoginError] = useState('');
     const { signInLogIn, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
-
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-
     const googleProvider = new GoogleAuthProvider();
-
 
     // email/password Login
     const handleLogin = data => {
@@ -27,14 +24,12 @@ const Login = () => {
                 console.log(user);
                 navigate(from, { replace: true });
                 toast.success('Successfully login');
-
             })
             .catch(error => {
                 console.log(error.message)
                 setLoginError(error.message)
             });
     }
-
     // handle with google sign in method
     const handleGoogleSignIn = () => {
         googleSignIn(googleProvider)
@@ -49,7 +44,6 @@ const Login = () => {
         <div className='h-[800px] flex justify-center items-center'>
             <div className='w-96 p-7'>
                 <h2 className='text-3xl font-bold text-center'>Login</h2>
-
                 <form onSubmit={handleSubmit(handleLogin)}>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"><span className="label-text-alt">Email</span></label>
@@ -77,9 +71,6 @@ const Login = () => {
                     </div>
                     <input className='btn btn-active btn-primary w-full' type="submit" value="Login" />
                 </form>
-                <div>
-
-                </div>
                 <p>Are you new to RH-Laptop? <Link to="/signup" className='text-primary font-bold text-sm underline'>Create a account.</Link></p>
                 <div className="divider">OR</div>
                 <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'><FcGoogle className='text-2xl mr-2' />CONTINUE WITH GOOGLE</button>

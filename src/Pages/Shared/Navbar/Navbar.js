@@ -4,19 +4,25 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-
     const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(err => console.log(err))
     }
-
     const menuItems = <React.Fragment>
         <li><Link to='/'>Home</Link></li>
-        {/* <li><Link to='/allProductsCategories'>Categories</Link></li> */}
+        {/* <li>
+            <select className='p-1 px-5 rounded text-white bg-purple-600'>
+                <option selected>All Category</option>
+                <option>Smart Watch</option>
+                <option>Mobile</option>
+                <option>Earphone</option>
+                <option>Laptop</option>
+            </select>
+        </li> */}
+        <li><Link to='/allProductsCategories'>Categories</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
         <li><a href="#contact">Contact</a></li>
-
         {
             user?.uid ?
                 <>
@@ -27,9 +33,8 @@ const Navbar = () => {
                 <li><Link to='/login'>Login</Link></li>
         }
     </React.Fragment>
-
     return (
-        <div className="navbar bg-base-100 flex justify-between" style={{ backgroundColor: "#0088CC" }}>
+        <div className="navbar flex justify-between bg-purple-600">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,14 +44,13 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                {/* <Link to='/' className="btn btn-ghost normal-case text-xl font-bold">Laptop-Shop</Link> */}
-                <Link to='/' className="btn btn-ghost normal-case text-2xl font-bold"><span className='text-white'>RH-</span><h1 className='text-yellow-400'>LAPTOP-SHOP</h1>
-                    {/* <img style={{ width: "180px", height: "40px", position: "absolute" }} src={RhLaptopShop} alt="" /> */}
-                </Link>
+                <div className='flex items-center'>
+                    <img style={{ width: "50px", height: "30px" }} src='https://i.ibb.co/bHjzL7W/shopping-cart-bluebg.png' alt="" />
+                    <Link to='/' className="btn btn-ghost normal-case text-2xl font-bold"><span className='text-white'>RH-</span><h1 className='text-yellow-400'>LAPTOP-SHOP</h1></Link>
+                </div>
             </div>
-
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0 text-white">
+                <ul className="menu menu-horizontal p-0 text-white font-bold">
                     {menuItems}
                 </ul>
             </div>

@@ -48,7 +48,6 @@ const AllSalers = () => {
                 toast.success(`Verified succesfull`);
             })
     }
-
     return (
         <div>
             <div>
@@ -92,7 +91,6 @@ const AllSalers = () => {
                     </table>
                 </div>
             </div>
-
         </div>
     );
 };

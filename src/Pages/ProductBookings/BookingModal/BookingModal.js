@@ -50,8 +50,6 @@ const BookingModal = ({ products, setProducts }) => {
                 }
             });
     }
-
-
     return (
         <>
             <input type="checkbox" id="booking-modal" className="modal-toggle" />

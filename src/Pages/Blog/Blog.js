@@ -5,15 +5,11 @@ const Blog = () => {
     return (
         <div>
             <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-                {/* <Helmet>
-                    <title>Blogs</title>
-                </Helmet> */}
+                {/* <Helmet> <title>Blogs</title></Helmet> */}
                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
                     This is Blog Questions Answer.
                 </h2>
-
                 <div className="grid max-w-screen-lg gap-8 row-gap-5 md:row-gap-8 sm:mx-auto lg:grid-cols-2">
-
                     <div className="transition duration-300 transform bg-white rounded shadow-sm hover:-translate-y-1 hover:shadow md:text-center">
                         <div className="relative">
                             <img
@@ -38,7 +34,6 @@ const Blog = () => {
                             </p>
                         </div>
                     </div>
-
                     <div className="transition duration-300 transform bg-white rounded shadow-sm hover:-translate-y-1 hover:shadow md:text-center">
                         <div className="relative">
                             <img
@@ -59,7 +54,6 @@ const Blog = () => {
                             </p>
                         </div>
                     </div>
-
                     <div className="transition duration-300 transform bg-white rounded shadow-sm hover:-translate-y-1 hover:shadow md:text-center">
                         <div className="relative">
                             <img
@@ -82,8 +76,6 @@ const Blog = () => {
 
                         </div>
                     </div>
-
-
                     <div className="transition duration-300 transform bg-white rounded shadow-sm hover:-translate-y-1 hover:shadow md:text-center">
                         <div className="relative">
                             <img
@@ -104,12 +96,10 @@ const Blog = () => {
                                 <strong>Vue,</strong> When looking into Vue vs React, in Vue, UI and behavior are also a part of components, which makes things more intuitive. Also, Vue is highly customizable, which allows you to combine the UI and behavior of components from within a script. Further, you can also use pre-processors in Vue rather than CSS, which is a great functionality. Vue is great when it comes to integration with other libraries, like Bootstrap.
                                 <a className='text-primary' href="https://www.codeinwp.com/blog/angular-vs-vue-vs-react/">Read More</a>
                             </p>
-
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };

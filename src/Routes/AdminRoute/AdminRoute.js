@@ -4,12 +4,10 @@ import { AuthContext } from '../../contexts/AuthProvider';
 import useAdmin from '../../hooks/useAdmin';
 import Loading from '../../Pages/Shared/Loading/Loading';
 
-
 const AdminRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
     const [isAdmin, isAdminLoading] = useAdmin(user?.email);
     const location = useLocation();
-
 
     if (user && isAdmin) {
         return children;

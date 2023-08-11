@@ -2,7 +2,6 @@ import React from 'react';
 
 const ConfirmationModal = ({ closeModal, modalData, successAction }) => {
     return (
-
         <div>
             <input type="checkbox" id="confirmation-modal" className="modal-toggle" />
             <div className="modal">
@@ -18,7 +17,6 @@ const ConfirmationModal = ({ closeModal, modalData, successAction }) => {
                 </div>
             </div>
         </div >
-
     );
 };
 

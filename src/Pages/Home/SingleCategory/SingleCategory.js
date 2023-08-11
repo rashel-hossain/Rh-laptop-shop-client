@@ -25,7 +25,6 @@ const SingleCategory = () => {
                     )
                 }
             </div>
-
             {
                 products &&
                 <BookingModal
@@ -33,7 +32,6 @@ const SingleCategory = () => {
                     setProducts={setProducts}
                 ></BookingModal>
             }
-
         </div>
     );
 };

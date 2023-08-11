@@ -6,8 +6,8 @@ const Footer = () => {
         <div className='text-white bg-violet-900 p-5 mt-24'>
             <footer className="footer">
                 <div>
-                    <img className='rounded-xl' src="/RhLaptopShop.PNG" alt="" />
-                    <p>RH-Laptop-Shop<br />Providing reliable tech since 2020</p>
+                    <h1 className='text-white text-3xl font-extrabold'>RH-Laptop-Shop</h1>
+                    <p>Providing reliable tech since 2020</p>
                 </div>
                 <div>
                     <span className="footer-title">Services</span>

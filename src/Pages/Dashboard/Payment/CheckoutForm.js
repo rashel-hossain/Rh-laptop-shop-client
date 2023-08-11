@@ -11,7 +11,6 @@ const CheckoutForm = ({ booking }) => {
     const [clientSecret, setClientSecret] = useState('');
     const { price, buyerEmail, phone, _id } = booking;
 
-
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
         fetch("https://laptop-shop-server.vercel.app/create-payment-intent", {
@@ -25,7 +24,6 @@ const CheckoutForm = ({ booking }) => {
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
     }, [price]);
-
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -104,7 +102,6 @@ const CheckoutForm = ({ booking }) => {
                 })
         }
         setProcessing(false);
-
     }
     return (
         <>

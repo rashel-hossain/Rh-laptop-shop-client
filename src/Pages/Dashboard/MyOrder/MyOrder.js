@@ -5,9 +5,6 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 
 const MyOrder = () => {
     const { user } = useContext(AuthContext);
-
-    // const url = `https://laptop-shop-server.vercel.app/bookings?email=${user?.email}`;
-
     // Display User specific Appointments using Data Table
     const { data: bookings = [] } = useQuery({
         queryKey: ['bookings', user?.email],
@@ -16,9 +13,8 @@ const MyOrder = () => {
             const data = await res.json();
             return data;
         }
-
     });
-    console.log(bookings);
+    // console.log(bookings);
     return (
         <div className='mx-2'>
             <h2 className="text-2xl mb-2">My Order List</h2>
@@ -34,7 +30,6 @@ const MyOrder = () => {
                         </tr>
                     </thead>
                     <tbody>
-
                         {
                             bookings?.length
                             && bookings.map((booking, i) => <tr key={booking._id}>
@@ -61,15 +56,11 @@ const MyOrder = () => {
                                         booking.price && booking.paid && <span className='text-green-500 font-bold btn-sm'>Paid</span>
                                     }
                                 </td>
-
                             </tr>)
                         }
-
                     </tbody>
                 </table>
             </div>
-
-
         </div>
     );
 };

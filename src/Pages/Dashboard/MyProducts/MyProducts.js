@@ -6,7 +6,6 @@ import toast from 'react-hot-toast'
 
 const MyProducts = () => {
     const { user } = useContext(AuthContext);
-
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
@@ -15,7 +14,6 @@ const MyProducts = () => {
             return data;
         }
     });
-
     // console.log('55555', users)
 
     // isAdvertiseds
@@ -30,7 +28,6 @@ const MyProducts = () => {
                 refetch();
             })
     }
-
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -46,7 +43,6 @@ const MyProducts = () => {
                 toast.success('Delete successfully')
             })
     }
-
     return (
         <div>
             <h2 className='text-3xl'>My Products</h2>

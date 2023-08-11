@@ -15,7 +15,6 @@ const DisplayError = () => {
             })
             .catch(err => console.log(err))
     }
-
     return (
         <div>
             <p className='text-red-500'>Something want wrong!!</p>

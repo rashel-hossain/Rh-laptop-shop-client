@@ -16,7 +16,7 @@ const ContactUs = () => {
                         <textarea className='border' name="" id="" cols="30" rows="10"></textarea>
                     </form>
                 </div>
-                {/* <div>
+               {/* <div>
                     <h2>Map</h2>
                     <Map google={this.props.google} zoom={14}>
 
@@ -28,14 +28,13 @@ const ContactUs = () => {
                         </InfoWindow>
                     </Map>
 
-                </div> */}
+                </div>  */}
             </div>
         </section>
     );
 };
 
 export default ContactUs;
-
 // export default GoogleApiWrapper({
 //     apiKey: ("YOUR_GOOGLE_API_KEY_GOES_HERE")
 //   })(ContactUs)

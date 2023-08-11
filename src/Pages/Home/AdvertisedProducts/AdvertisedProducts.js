@@ -4,7 +4,6 @@ import AdvertisedProduct from './AdvertisedProduct';
 import { useQuery } from '@tanstack/react-query';
 
 const AdvertisedProducts = () => {
-
     const { data: advertiseds = [], isLoading } = useQuery({
         queryKey: ['advertiseds'],
         queryFn: async () => {

@@ -2,8 +2,8 @@ import React from 'react';
 
 const AdvertisedProduct = ({ advertise }) => {
     const { image, productTitle, reSellPrice, orginalPrice, productDescription } = advertise;
-
-    console.log(advertise, 'advertised')
+    console.log(advertise, 'advertised');
+    
     return (
         <div>
             <div style={{ backgroundImage: `url(${image})`, objectFit:'cover', backgroundSize:'cover'}} 
