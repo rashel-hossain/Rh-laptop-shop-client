@@ -12,22 +12,17 @@ const ContactUs = () => {
                         <input className='border' type="text" />
                         <input className='border' type="text" />
                         <input type="text" />
-
                         <textarea className='border' name="" id="" cols="30" rows="10"></textarea>
                     </form>
                 </div>
-               {/* <div>
+                {/* <div>
                     <h2>Map</h2>
                     <Map google={this.props.google} zoom={14}>
-
                         <Marker onClick={this.onMarkerClick}
                             name={'Current location'} />
-
                         <InfoWindow onClose={this.onInfoWindowClose}>
-                             
                         </InfoWindow>
                     </Map>
-
                 </div>  */}
             </div>
         </section>

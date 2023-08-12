@@ -81,22 +81,26 @@ const SignUp = () => {
     }
     return (
         <div className='h-[800px] flex justify-center items-center'>
-            <div className='w-96 p-7'>
-                <h2 className='text-3xl font-bold text-center'>Sign Up</h2>
+            <div className='bg-purple-600 rounded-md w-96 p-7'>
+                <h2 className='text-3xl text-white text-center font-bold'>Sign Up</h2>
                 <form onSubmit={handleSubmit(handleSignUp)}>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"><span className="label-text-alt">Name</span></label>
                         <input type="name"
                             {...register("name", { required: "Name is requred!" })}
-                            className="input input-bordered w-full max-w-xs" />
-                        {errors.name && <p className='text-red-600'>{errors.name?.message}</p>}
+                            className="input input-bordered w-full max-w-xs"
+                            placeholder='your name'
+                        />
+                        {errors.name && <p className='text-white'>{errors.name?.message}</p>}
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"><span className="label-text-alt">Email</span></label>
                         <input type="email"
                             {...register("email", { required: "Email address is required!" })}
-                            className="input input-bordered w-full max-w-xs" />
-                        {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
+                            className="input input-bordered w-full max-w-xs"
+                            placeholder='your email'
+                        />
+                        {errors.email && <p className='text-white'>{errors.email?.message}</p>}
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"><span className="label-text-alt">Password</span></label>
@@ -106,8 +110,10 @@ const SignUp = () => {
                                 minLength: { value: 6, message: "Password must be 6 charcter or long!" },
                                 pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/, message: 'Password must have uppercase, number and special characters' }
                             })}
-                            className="input input-bordered w-full max-w-xs" />
-                        {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
+                            className="input input-bordered w-full max-w-xs"
+                            placeholder='your password'
+                        />
+                        {errors.password && <p className='text-white'>{errors.password?.message}</p>}
                     </div>
                     <div className="form-control mt-2">
                         <label className="label">

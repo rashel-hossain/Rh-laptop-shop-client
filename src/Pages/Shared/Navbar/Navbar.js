@@ -14,13 +14,12 @@ const Navbar = () => {
         {/* <li>
             <select className='p-1 px-5 rounded text-white bg-purple-600'>
                 <option selected>All Category</option>
-                <option>Smart Watch</option>
-                <option>Mobile</option>
-                <option>Earphone</option>
-                <option>Laptop</option>
+                <option>MacBook</option>
+                <option>Hp</option>
+                <option>Samsung</option>
             </select>
         </li> */}
-        <li><Link to='/allProductsCategories'>Categories</Link></li>
+        {/* <li><Link to='/allProductsCategories'>Products</Link></li> */}
         <li><Link to='/blog'>Blog</Link></li>
         <li><a href="#contact">Contact</a></li>
         {
@@ -30,7 +29,7 @@ const Navbar = () => {
                     <li><button onClick={handleLogOut} to='/login'>SignOut</button></li>
                 </>
                 :
-                <li><Link to='/login'>Login</Link></li>
+                <li><Link className='bg-blue-500 rounded-md hover:bg-green-400' to='/login'>Login</Link></li>
         }
     </React.Fragment>
     return (

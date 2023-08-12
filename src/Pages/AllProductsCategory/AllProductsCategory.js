@@ -23,7 +23,7 @@ const AllProductsCategory = ({ allcategory }) => {
                     <p className='flex items-center'><HiLocationMarker className='mr-2' /> {location}</p>
                 </div>
                 <div className="card-actions justify-center ">
-                    {/* <Link to={`/singleCategory/${_id}`} className='w-full'><button className="btn btn-wide justify-center items-center w-full">Book Now</button></Link> */}
+                    <Link to={`/singleCategory/${_id}`} className='w-full'><button className="btn btn-wide justify-center items-center w-full">Book Now</button></Link>
                 </div>
             </div>
         </div>

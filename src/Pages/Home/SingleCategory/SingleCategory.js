@@ -19,7 +19,6 @@ const SingleCategory = () => {
                     brands.map(brand => <ProductCard
                         key={brand._id}
                         brand={brand}
-
                         setProducts={setProducts}
                     ></ProductCard>
                     )

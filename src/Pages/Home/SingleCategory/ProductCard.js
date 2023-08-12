@@ -39,13 +39,13 @@ const ProductCard = ({ brand, setProducts }) => {
                     <p className='font-bold'>Used: <span>{yearsOfUses}</span> Year</p>
                 </div>
                 <div>
-                    <p className='flex items-center'><MdMarkEmailRead className='mr-2' /> {email}</p>
+                    <p className='flex items-center'><MdMarkEmailRead className='mr-2'/> {email}</p>
                     <div className='flex justify-between'>
-                        <p className='flex items-center'><HiLocationMarker className='mr-2' /> {location}</p>
+                        <p className='flex items-center'><HiLocationMarker className='mr-2'/> {location}</p>
                     </div>
                     {
                         brand?.postDate &&
-                        <p className='flex items-center'><FaRegClock className='mr-2' />
+                        <p className='flex items-center'><FaRegClock className='mr-2'/>
                             {
                                 format(new Date(brand?.postDate), 'pp PP')
                             }
